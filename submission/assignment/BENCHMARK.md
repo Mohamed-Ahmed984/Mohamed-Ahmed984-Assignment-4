@@ -24,7 +24,7 @@ The supplied run contains only 100 and 100,000 appends. The assignment requires 
 Run from the repository root:
 
 ```bash
-dotnet run --project AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj -c Release -- --benchmark
+dotnet run --project submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj -c Release -- --benchmark
 ```
 
 Then add the complete generated summary from `BenchmarkDotNet.Artifacts/results/` for all four sizes. No measurements have been invented for the missing sizes.

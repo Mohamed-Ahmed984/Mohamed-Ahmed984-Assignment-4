@@ -63,7 +63,7 @@ Sorting groups equal characters together. Matching the sorted arrays confirms th
 
 ### Supplied Screenshot
 
-![Valid Anagram — supplied test result](valid-anagram.png)
+![Valid Anagram — supplied test result](images/valid-anagram.png)
 
 The screenshot shows **Accepted under Test Result** for the pictured version. Full Submit acceptance and acceptance of the no-LINQ version above have not been verified.
 
@@ -128,7 +128,7 @@ The GCD helper repeatedly replaces `(a, b)` with `(b, a % b)`. When b becomes ze
 
 ### Supplied Screenshot
 
-![Greatest Common Divisor of Strings — supplied test result](greatest-common-divisor-of-strings.png)
+![Greatest Common Divisor of Strings — supplied test result](images/greatest-common-divisor-of-strings.png)
 
 The screenshot shows **Accepted under Test Result**. Full Submit acceptance and execution of the completed helper above have not been verified.
 

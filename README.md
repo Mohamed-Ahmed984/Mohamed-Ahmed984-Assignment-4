@@ -1,13 +1,10 @@
 # Academy Schedule Analyzer
 
-A C# console application that helps a training academy inspect its session schedule and understand how its training time is distributed. It is also a learning assignment: each academy task demonstrates a specific C# concept through arrays, functions, loops, dates, strings and exception handling.
+**Assignment 4 — C# Fundamentals**
 
-| Assignment information | Value |
-| --- | --- |
-| Student Name | Not supplied |
-| Cohort | Not supplied |
-| Assignment | [S1-A4] Assignment 4 |
-| Submission branch | `assignment/1-4` |
+Explore how a training academy can review its sessions, calculate training hours, track dates and prepare schedule reports through a simple console application.
+
+This guide explains the program step by step for C# beginners, connecting each feature to the arrays, functions, date calculations and exception handling used in the code.
 
 ## What does it do for an academy?
 
@@ -90,19 +87,19 @@ If downloading a ZIP instead, select the assignment branch on GitHub and extract
 Run these commands from the repository root:
 
 ```bash
-dotnet restore AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj
+dotnet restore submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj
 dotnet build submission/assignment/Assignment4.sln -c Release
-dotnet run --project AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj
+dotnet run --project submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj
 ```
 
 ### Open in Visual Studio
 
 1. Download or clone the complete repository.
-2. Open `submission/assignment/Assignment4.sln`, or open `AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj` directly.
+2. Open `submission/assignment/Assignment4.sln`, or open `submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj` directly.
 3. Open `Program.cs` in Solution Explorer to read the application code.
 4. Run the console application.
 
-The solution refers to the project using a relative path. Opening the solution from inside a ZIP or moving it away from the other folders can prevent Visual Studio from finding the project.
+The solution refers to `AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj` inside the same assignment folder. Extract the files before opening the solution, and keep the contents of `submission/assignment/` together.
 
 ## Using the console menu
 
@@ -259,7 +256,7 @@ The intended text and line endings are equivalent. The difference is how the tex
 Run the benchmark separately from the interactive menu:
 
 ```bash
-dotnet run --project AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj -c Release -- --benchmark
+dotnet run --project submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj -c Release -- --benchmark
 ```
 
 Each benchmark method appends the **same text** repeatedly and returns the result. The measured loops do not print to the console. This experiment repeats one line to study text-building performance; it does not repeatedly display the academy menu.
@@ -275,13 +272,13 @@ The appends parameter is different from BenchmarkDotNet's measurement iteration 
 
 The results report mean execution time, error, standard deviation and allocated memory. Allocated memory is cumulative allocation per operation, not the final string size or peak memory held at one moment.
 
-See [BENCHMARK.md](BENCHMARK.md) for the supplied result table and all seven analysis answers. The supplied run contains results for 100 and 100,000 appends. The source is configured for all four required sizes; results for 1,000 and 10,000 still need to be produced. At the largest size, repeated string concatenation can take a long time.
+See [BENCHMARK.md](submission/assignment/BENCHMARK.md) for the supplied result table and all seven analysis answers. The supplied run contains results for 100 and 100,000 appends. The source is configured for all four required sizes; results for 1,000 and 10,000 still need to be produced. At the largest size, repeated string concatenation can take a long time.
 
 StringBuilder is useful for repeated appends, but it is not automatically the best choice for every small string operation. Conclusions should follow the actual workload and measurements.
 
 ### Original benchmark output
 
-![BenchmarkDotNet output comparing string concatenation with StringBuilder](benchmark-results.png)
+![BenchmarkDotNet output comparing string concatenation with StringBuilder](submission/assignment/benchmark-results.png)
 
 This is the student's supplied output for 100 and 100,000 appends. In both displayed cases, StringBuilder has a lower mean execution time and allocates less memory. The image uses the original names `N` and `StringBuilderReport`; the current source names are `Iterations` and `StringBuilderConcatenation`. The two intermediate sizes are not shown in this run.
 
@@ -296,7 +293,7 @@ The assignment also includes two independent problem-solving exercises:
 
 [leetcode.md](submission/leetcode/leetcode.md) contains both C# solutions, explanations, complexities and screenshot references. These code blocks are separate from the console application.
 
-[Evidence overview](LeetCode/README.md)
+[Evidence overview](submission/leetcode/README.md)
 
 The supplied screenshots show Accepted under Test Result. Full Submit acceptance and acceptance of the documented revised code have not been independently verified.
 
@@ -304,17 +301,17 @@ The supplied screenshots show Accepted under Test Result. Full Submit acceptance
 
 | Path | Purpose |
 | --- | --- |
-| [AcademyScheduleAnalyzer/Program.cs](AcademyScheduleAnalyzer/Program.cs) | Menu, starter arrays and application functions. |
-| [AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj](AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj) | .NET target and package reference. |
-| [AcademyScheduleAnalyzer/Benchmarks/StringBenchmark.cs](AcademyScheduleAnalyzer/Benchmarks/StringBenchmark.cs) | BenchmarkDotNet experiment. |
+| [submission/assignment/AcademyScheduleAnalyzer/Program.cs](submission/assignment/AcademyScheduleAnalyzer/Program.cs) | Menu, starter arrays and application functions. |
+| [submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj](submission/assignment/AcademyScheduleAnalyzer/AcademyScheduleAnalyzer.csproj) | .NET target and package reference. |
+| [submission/assignment/AcademyScheduleAnalyzer/Benchmarks/StringBenchmark.cs](submission/assignment/AcademyScheduleAnalyzer/Benchmarks/StringBenchmark.cs) | BenchmarkDotNet experiment. |
 | [submission/assignment/Assignment4.sln](submission/assignment/Assignment4.sln) | Real solution file referring to the application project. |
 | [submission/leetcode/account.md](submission/leetcode/account.md) | Actual supplied LeetCode account information. |
 | [submission/leetcode/leetcode.md](submission/leetcode/leetcode.md) | Independent solutions and learning explanations. |
 | `submission/leetcode/` | Supplied screenshots and submission README. |
-| `LeetCode/` | Official evidence README and images folder. |
-| [BENCHMARK.md](BENCHMARK.md) | Existing measurements and performance analysis. |
+| `submission/leetcode/images/` | Original supplied LeetCode screenshots. |
+| [BENCHMARK.md](submission/assignment/BENCHMARK.md) | Existing measurements and performance analysis. |
 
-The solution's relative project reference avoids duplicating application source. Both screenshot locations are retained to follow the official evidence layout and the requested submission organization.
+All application source, project and solution files, benchmark analysis and benchmark screenshot are grouped inside `submission/assignment/`. All LeetCode documents and screenshots are grouped inside `submission/leetcode/`, with one copy of each screenshot in `images/`. You can copy the complete `submission/assignment/` folder without breaking the solution's project reference.
 
 ## Suggested learning walkthrough
 

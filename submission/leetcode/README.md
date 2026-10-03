@@ -6,17 +6,17 @@
 
 Problem: https://leetcode.com/problems/valid-anagram/
 
-![Supplied Valid Anagram test result](valid-anagram.png)
+![Supplied Valid Anagram test result](images/valid-anagram.png)
 
 ## Greatest Common Divisor of Strings
 
 Problem: https://leetcode.com/problems/greatest-common-divisor-of-strings/
 
-![Supplied GCD of Strings test result](greatest-common-divisor-of-strings.png)
+![Supplied GCD of Strings test result](images/greatest-common-divisor-of-strings.png)
 
 Both supplied screenshots show Accepted under Test Result. Full Submit acceptance remains unverified.
 
-[Solution explanations and official evidence layout](../../LeetCode/README.md)
+The `images/` folder contains the original supplied screenshots. Solutions, explanations and complexity analysis are in [leetcode.md](leetcode.md).
 
 ## Account
 
